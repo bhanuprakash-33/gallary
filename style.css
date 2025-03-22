@@ -1,0 +1,106 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(to bottom, #6e4eb8, #6a11cb);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex-grow: 1;
+    background: linear-gradient(to right, #f1eded, #fad0c4);
+}
+
+/* Side Panel */
+#side_panel {
+    width: 300px;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enables vertical scrolling within the side panel */
+    height: calc(100vh - 84px); /* Make the side panel scrollable, accounting for header height */
+}
+
+/* Navigation List */
+#nav_list {
+    list-style-type: none;
+    padding-right: 15px;
+}
+
+.nav_item {
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav_item:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+    color: black;
+}
+
+/* Content Section */
+#content_div {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content_frame {
+    width: 95%;
+    height: 95%;
+    border: 3px solid #6a11cb;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #side_panel {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .nav_item {
+        display: inline-block;
+        padding: 10px;
+        margin: 5px;
+        font-size: 16px;
+    }
+
+    #content_frame {
+        height: 80vh;
+    }
+}

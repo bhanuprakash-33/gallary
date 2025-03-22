@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        input {
+            width: 100%;
+            font-size: 16px;
+            padding: 5px;
+        }
+        button {
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 12px;
+            margin: 5px 0;
+        }
+        .btn_green {
+            background-color: rgba(11, 238, 3, 0.8);
+            color: white;
+            border: none;
+        }
+        .btn_red {
+            background-color: rgba(253, 40, 21, 0.8);
+            color: white;
+            border: none;
+        }
+        #output_div {
+            margin-top: 20px;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .buttons-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        #search_section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>User Personal Details</h2>
+    <div class="form-container">
+        <input id="first_name" placeholder="Enter First Name">
+        <input id="last_name" placeholder="Enter Last Name">
+        <input id="age" type="number" placeholder="Enter Age">
+        <input id="email" type="email" placeholder="Enter Email">
+    </div>
+    <div class="buttons-container">
+        <button onclick="insertUser();" class="btn_green">Insert Info</button>
+        <button onclick="clearInputs();" class="btn_red">Clear Inputs</button>
+        <button onclick="showUserInfo();" class="btn_green">Show All</button>
+        <button onclick="clearDisplay();" class="btn_red">Clear Display</button>
+    </div>
+
+    <!-- Search Section -->
+    <div id="search_section">
+        <h3>Search Users</h3>
+        <input id="search_field" placeholder="Search by any detail">
+        <button onclick="searchUser();" class="btn_green">Search</button>
+    </div>
+
+    <div id="output_div"></div>
+
+    <script>
+        let users = [];
+
+        function User(firstName, lastName, age, email) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.email = email;
+            this.describe = function() {
+                return `User: ${this.firstName} ${this.lastName}, Age: ${this.age}, Email: ${this.email}`;
+            };
+        }
+
+        function insertUser() {
+            let firstName = document.getElementById("first_name").value;
+            let lastName = document.getElementById("last_name").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+
+            if (firstName && lastName && age && email) {
+                let newUser = new User(firstName, lastName, age, email);
+                users.push(newUser);
+                showUserInfo();
+                clearInputs();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+
+        function showUserInfo() {
+            let output = "<h2>Registered Users</h2>";
+            for (let user of users) {
+                output += user.describe() + "<br>";
+            }
+            document.getElementById("output_div").innerHTML = output;
+        }
+
+        function clearInputs() {
+            document.getElementById("first_name").value = "";
+            document.getElementById("last_name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("email").value = "";
+        }
+
+        function clearDisplay() {
+            document.getElementById("output_div").innerHTML = "";
+        }
+
+        function searchUser() {
+            let key = document.getElementById("search_field").value.toLowerCase();
+            let output = "<h2>Search Results</h2>";
+
+            for (let user of users) {
+                if (
+                    user.firstName.toLowerCase().includes(key) ||
+                    user.lastName.toLowerCase().includes(key) ||
+                    user.age.toString().includes(key) ||
+                    user.email.toLowerCase().includes(key)
+                ) {
+                    output += user.describe() + "<br>";
+                }
+            }
+
+            document.getElementById("output_div").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>
