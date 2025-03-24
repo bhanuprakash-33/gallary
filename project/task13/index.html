@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ht">
+    <input placeholder="Enter Min" id="min">
+    <input placeholder="Enter Max" id="max">
+    <input value="Generate" type="button" onclick="Generate()">
+    <div id="htm"></div>
+</div>
+
+    <script>
+        let colors = ['red', 'green', 'blue', 'grey'];
+        function Generate() {
+            let min = parseInt(document.getElementById('min').value);
+            let max = parseInt(document.getElementById('max').value);
+                let random_value = Math.floor(Math.random() * (max - min + 1)) + min;
+                document.getElementById('htm').innerHTML = random_value;
+                let size = colors.length;
+                let idx = Math.floor(Math.random() * size);
+                document.getElementById('htm').style.color = colors[idx];
+                 // let x=Math.random();
+        //let y=Math.floor(10 * Math.random());
+       // console.log(x);
+        //console.log(y);
+        }
+        (function(){
+            alert('Hello');
+        })();
+        function vanish(){
+            document.getElementById('ht').innerHTML="<h1>Vanished!</h1>";
+        }
+setTimeout(vanish,5000);//time in ms
+            </script>
+</body>
+</html>

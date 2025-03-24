@@ -1,23 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
     // JSON Data stored directly in the JS file
-    const works = [
-        { "title": "Project 1", "url": "works/task1/index.html" },
-        { "title": "Project 2", "url": "works/task2/index.html" },
-        { "title": "Project 3", "url": "works/task3/index.html" },
-        { "title": "Project 4", "url": "works/task4/index.html" },
-        { "title": "Project 5", "url": "works/task5/index.html" },
-        { "title": "Project 6", "url": "works/task6/index.html" },
-        { "title": "Project 7", "url": "works/task7/index.html" },
-        { "title": "Project 8", "url": "works/task8/index.html" },
-        { "title": "Project 9", "url": "works/task9/index.html" },
-        { "title": "Project 10", "url": "works/task10/index.html" },
-        { "title": "Project 11", "url": "works/task11/index.html" },
-        { "title": "Project 12", "url": "works/task12/index.html" },
-        { "title": "Project 13", "url": "works/task13/index.html" },
-        { "title": "Project 14", "url": "works/task14/index.html" },
-        { "title": "Project 15", "url": "works/task15/index.html" },
-        { "title": "Project 16", "url": "works/task16/index.html" }
-    ];
+    const works = 
+        [
+            { "title": "Task 1-HTML Styling", "url": "project/task1/index.html" },
+            { "title": "Task 2-Dashboard", "url": "project/task2/index.html" },
+            { "title": "Task 3-CSS Hover", "url": "project/task3/index.html" },
+            { "title": "Task 4-Alert", "url": "project/task4/index.html" },
+            { "title": "Task 5-Calculator", "url": "project/task5/index.html" },
+            { "title": "Task 6-String Operation", "url": "project/task6/index.html" },
+            { "title": "Task 7-Grade Calculator", "url": "project/task7/index.html" },
+            { "title": "Task 8-Stack", "url": "project/task8/index.html" },
+            { "title": "Task 9-Loops", "url": "project/task9/index.html" },
+            { "title": "Task 10-Sum", "url": "project/task10/index.html" },
+            { "title": "Task 11-Personal INFO", "url": "project/task11/index.html" },
+            { "title": "Task 12-Search Bar", "url": "project/task12/index.html" },
+            { "title": "Task 13-Dynamic func", "url": "project/task13/index.html" },
+            { "title": "Task 14-Rand", "url": "project/task14/index.html" },
+            { "title": "Task 15-Checkout", "url": "project/task15/index.html" },
+            { "title": "Task 16-Age Calculator", "url": "project/task16/index.html" }
+        ]
+        
 
     let navList = document.getElementById("nav_list");
     let contentFrame = document.getElementById("content_frame");

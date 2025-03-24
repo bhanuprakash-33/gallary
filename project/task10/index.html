@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function calculate(){
+            let a = parseInt(document.getElementById('h').value); 
+            let b = parseInt(document.getElementById('y').value); 
+            let text = a + b;
+            document.getElementById("nhg").innerHTML = "Sum: " + text;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Enter Number" id="h">
+    <input type="text" placeholder="Enter Number" id="y">
+    <input type="button" value="Calculate" onclick="calculate()">
+    <div id="nhg"></div>
+</body>
+</html>

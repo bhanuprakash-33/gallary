@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Personal Info</title>
+    <script>
+        let users = [
+            { id: 1, name: "Bhanu Prakash", sex: "male", mail: "Bhanuprakash3@gmail.com", sNumber: "S00455011" },
+            { id: 2, name: "Alice Johnson", sex: "female", mail: "alice.johnson@example.com", sNumber: "S00455012" },
+            { id: 3, name: "John Doe", sex: "male", mail: "john.doe@example.com", sNumber: "S00455013" }
+        ];
+
+        let currentUserIndex = 0;
+
+        function displayUserInfo() {
+            let user = users[currentUserIndex];
+            document.getElementById("make").value = user.name;
+            document.getElementById("model").value = user.sex;
+            document.getElementById("year").value = user.mail;
+            document.getElementById("color").value = user.sNumber;
+
+            document.getElementById("demo_div").innerHTML = `
+                Name: ${user.name}<br>
+                Sex: ${user.sex}<br>
+                Email: ${user.mail}<br>
+                Serial Number: ${user.sNumber}
+            `;
+        }
+
+        function updateInfo() {
+            let user = users[currentUserIndex];
+            user.name = document.getElementById("make").value;
+            user.sex = document.getElementById("model").value;
+            user.mail = document.getElementById("year").value;
+            user.sNumber = document.getElementById("color").value;
+
+            displayUserInfo();
+        }
+        function switchUser(userIndex) {
+            currentUserIndex = userIndex;
+            displayUserInfo();
+        }
+
+        window.onload = displayUserInfo;
+    </script>
+</head>
+<body>
+    <h1>Update Personal Information</h1>
+
+ 
+    <select onchange="switchUser(this.value)">
+        <option value="0">Bhanu Prakash</option>
+        <option value="1">Alice Johnson</option>
+        <option value="2">John Doe</option>
+    </select>
+
+    <form onsubmit="event.preventDefault(); updateInfo();">
+        <input type="text" id="make" placeholder="Enter Name">
+        <input type="text" id="model" placeholder="Enter Sex">
+        <input type="text" id="year" placeholder="Enter Email">
+        <input type="text" id="color" placeholder="Enter Serial Number">
+        <button type="submit">Update Info</button>
+    </form>
+
+    <br>
+
+    <h3>Updated User Info:</h3>
+    <div id="demo_div">
+        Name: Bhanu Prakash<br>
+        Sex: male<br>
+        Email: Bhanuprakash3@gmail.com<br>
+        Serial Number: S00455011
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.h{
+  text-align: center;
+  background-color: rgb(134, 25, 25);
+  margin: 3px;
+  border-radius: 0.25cap;
+  padding: 2px 6px;
+  }
+  .p{
+  margin: 0.5em;
+  background-color: rgb(24, 171, 122);
+  font-size: 2em;
+  border-radius: 0.3cap;
+  padding: 10px;
+  text-align: center;
+  height: 60%;
+  }
+  .div {
+  text-align: center;
+  margin: 1.1em 0;
+  }
+  button {
+  font-size: 2em;
+  display: block;
+  margin: 0 auto;
+  }
+  button:hover {
+  background-color: #d14dd3;
+  font-style: italic;
+}

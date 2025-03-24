@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       
+    </style>
+    <script>
+        let colors=["red","orange","blue","green","voiletg"];
+        let index=0;
+        let size=colors.length;
+        function Generate_shape() {
+            let text = "";
+            let e = parseInt(document.getElementById('j').value);
+let i=0;
+do{
+    for (let j = 0; j <= i; j++) {
+        text += "* ";
+    }
+    text += "<br>";
+    i++;
+}while(i<e)
+
+            document.getElementById("bhan").innerHTML = text;
+           
+            document.getElementById("bhan").style='color:'+colors[index];
+       
+           index=(index+1)%size;
+           
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Enter Number" id="j" onkeyup="Generate_shape()">
+    <div id="bhan"></div>
+</body>
+</html>

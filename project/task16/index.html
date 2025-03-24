@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Car {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+
+        get_age(current_year) {
+            return current_year - this.year;
+        }
+    }
+
+    function Calculate() {
+        let my_car = new Car("Ford", 2010);
+        const date = new Date();
+        let current_year = date.getFullYear();
+        let car_age = my_car.get_age(current_year);
+
+        let dob = new Date(document.getElementById('hg').value);
+        let dob_year = dob.getFullYear();
+        let user_age = current_year - dob_year;
+
+        let msg = "Your car is " + car_age + " year(s) old!";
+        document.getElementById("display").innerHTML = msg;
+    }
+</script>
+<body>
+    <input type="date" id="hg">
+    <button onclick="Calculate()">Calculate Age</button>
+    <div id="display"></div>
+</body>
+</html>
